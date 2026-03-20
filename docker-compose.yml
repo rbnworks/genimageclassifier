@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      WATCH_DIRS: /media/folder1,/media/folder2
+      SCAN_INTERVAL_SECONDS: "10"
+    volumes:
+      # Hot-reload: mount source so uvicorn --reload picks up .py changes
+      - ./backend/app:/app/app
+      - "${MEDIA_FOLDER1}:/media/folder1"
+      - "${MEDIA_FOLDER2}:/media/folder2"
+    networks:
+      - app-net
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      BACKEND_URL: http://backend:8000
+      # Tell Vite to use polling (needed on Windows/WSL bind mounts)
+      CHOKIDAR_USEPOLLING: "true"
+      VITE_USE_POLLING: "true"
+      # Direct WS URL as seen by the browser (port 8000 is published to host).
+      # Vite cannot proxy WebSocket reliably because its own HMR server intercepts
+      # all WS upgrades on port 3000 before the proxy rules fire.
+      VITE_WS_URL: ws://localhost:8000/ws/events
+    volumes:
+      # Persist node_modules in a named volume so rebuilds don't re-download packages
+      - frontend_node_modules:/app/node_modules
+      # Hot-reload: mount source so Vite picks up .ts/.tsx/.css changes
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+      - ./frontend/index.html:/app/index.html
+    depends_on:
+      - backend
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
+
+volumes:
+  frontend_node_modules:

@@ -1,0 +1,146 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 80px;
+  background: #161616;
+  border-left: 1px solid #242424;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 16px;
+  gap: 4px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #444;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  user-select: none;
+}
+
+.link,
+.linkActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 38px;
+  border-radius: 8px;
+  font-size: 0.68rem;
+  text-decoration: none;
+  color: #777;
+  transition: background 0.15s, color 0.15s;
+  text-align: center;
+}
+
+.link:hover {
+  background: #222;
+  color: #ccc;
+}
+
+.linkActive {
+  background: #252525;
+  color: #fff;
+}
+
+.wsStatus {
+  margin-top: auto;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #8f8f8f;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.wsDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px #202020;
+}
+
+.wsDisconnected {
+  background: #6c6c6c;
+}
+
+.wsConnecting {
+  background: #d69a2d;
+}
+
+.wsConnected {
+  background: #35c26b;
+}
+
+.wsReconnecting {
+  background: #f4b53f;
+  animation: pulse 1s infinite;
+}
+
+.wsText {
+  text-align: center;
+}
+
+/* ── Export mini-progress (sidebar) ──────────────────────────── */
+
+.exportMini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 52px;
+  margin-top: 6px;
+}
+
+.exportMiniLabel {
+  font-size: 0.6rem;
+  color: #4a7ad4;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.exportMiniTrack {
+  width: 100%;
+  height: 3px;
+  background: #252525;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.exportMiniFill {
+  height: 100%;
+  background: #4a7ad4;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

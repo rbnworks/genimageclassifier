@@ -1,0 +1,167 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+/* ── Control bar ─────────────────────────────────────────── */
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #161616;
+  border-bottom: 1px solid #242424;
+  flex-shrink: 0;
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.68rem;
+  color: #555;
+  margin-right: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.btn {
+  background: #222;
+  border: 1px solid #333;
+  color: #aaa;
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: #2c2c2c;
+  color: #ddd;
+}
+
+.btnActive {
+  background: #2a3a5e;
+  border-color: #3a5aaa;
+  color: #7ab3ff;
+}
+
+.select {
+  background: #222;
+  border: 1px solid #333;
+  color: #aaa;
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 260px;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #5a8aff;
+}
+
+/* ── Main display area ───────────────────────────────────── */
+
+.mainView {
+  flex: 1;
+  overflow: hidden;
+  display: grid;
+  gap: 4px;
+  padding: 4px;
+  min-height: 0;
+}
+
+.grid1x1 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.grid2x2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid3x3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.mainTile {
+  overflow: hidden;
+  border-radius: 6px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ── Thumbnail strip ─────────────────────────────────────── */
+
+.strip {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 8px 12px;
+  background: #111;
+  border-top: 1px solid #1e1e1e;
+  flex-shrink: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #1a1a1a;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.15s;
+}
+
+.thumbActive {
+  border-color: #5a8aff;
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Status / error ──────────────────────────────────────── */
+
+.status {
+  padding: 64px 24px;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.error {
+  padding: 64px 24px;
+  text-align: center;
+  color: #e05555;
+  font-size: 0.95rem;
+}

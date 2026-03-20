@@ -1,0 +1,13 @@
+.status {
+  padding: 64px 24px;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.error {
+  padding: 64px 24px;
+  text-align: center;
+  color: #e05555;
+  font-size: 0.95rem;
+}

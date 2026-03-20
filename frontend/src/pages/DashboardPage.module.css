@@ -1,0 +1,105 @@
+.page {
+  max-width: 860px;
+  padding: 36px 28px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 28px;
+}
+
+/* ── Stat cards ──────────────────────────────────────────── */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background: #1a1a1a;
+  border: 1px solid #282828;
+  border-radius: 10px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.statIcon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Section title ───────────────────────────────────────── */
+
+.sectionTitle {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+/* ── Quick-link cards ────────────────────────────────────── */
+
+.linkGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.linkCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #1a1a1a;
+  border: 1px solid #282828;
+  border-radius: 8px;
+  padding: 14px 20px;
+  text-decoration: none;
+  min-width: 160px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.linkCard:hover {
+  background: #222;
+  border-color: #3a5aaa;
+}
+
+.linkLabel {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.linkDesc {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+/* ── Error ───────────────────────────────────────────────── */
+
+.error {
+  color: #e05555;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}

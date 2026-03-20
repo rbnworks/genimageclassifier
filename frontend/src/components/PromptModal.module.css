@@ -1,0 +1,212 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.modal {
+  background: #1e1e1e;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #2e2e2e;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.body {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.status {
+  padding: 40px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.imageGrid {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.thumbWrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #111;
+}
+
+.thumbImgBtn {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: zoom-in;
+}
+
+.thumbWrapper:hover .thumbOverlay {
+  opacity: 1;
+}
+
+.thumbOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none; /* let clicks pass through to the button below */
+}
+
+.thumbPrompt {
+  font-size: 0.65rem;
+  color: #eee;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  user-select: text;
+  cursor: text;
+  margin-bottom: 6px;
+}
+
+.copyBtn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ddd;
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.thumbActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.thumbDeleteBtn {
+  background: rgba(200, 50, 50, 0.15);
+  border: 1px solid rgba(200, 50, 50, 0.3);
+  color: #c07070;
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+  pointer-events: auto;
+  line-height: 1.4;
+}
+
+.thumbDeleteBtn:hover:not(:disabled) {
+  background: rgba(200, 50, 50, 0.3);
+  border-color: rgba(200, 50, 50, 0.5);
+  color: #f08080;
+}
+
+.thumbDeleteBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.thumbDeleteBtnConfirm {
+  background: rgba(200, 50, 50, 0.35);
+  border-color: rgba(200, 50, 50, 0.6);
+  color: #f08080;
+  font-size: 0.65rem;
+}
+
+.thumbCancelBtn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  cursor: pointer;
+  border-radius: 3px;
+  pointer-events: auto;
+  line-height: 1;
+}
+
+.thumbCancelBtn:hover {
+  color: #ccc;
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: opacity 0.2s;
+}
+
+.thumbWrapper:hover .thumb {
+  opacity: 0.75;
+}
