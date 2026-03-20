@@ -30,7 +30,7 @@ Watched folders and other settings are driven by two files.
 
 ```dotenv
 # Host paths that Docker mounts into the backend container.
-MEDIA_FOLDER1=H:\Anime Girls
+MEDIA_FOLDER1=H:\Anime
 MEDIA_FOLDER2=C:\Users\You\Documents\ComfyUI\output
 ```
 
